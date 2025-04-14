@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.configPath": ".prettierrc.json",
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120
+}
