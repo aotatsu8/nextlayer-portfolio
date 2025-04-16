@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 
 function Footer() {
-  return <div>Footer</div>;
+  return (
+    <div className="w-full text-center bg-whitesmoke py-2 md:hidden">
+      <p>© 2025 ORIGIN.Doc</p>
+    </div>
+  );
 }
 
 export default Footer;
