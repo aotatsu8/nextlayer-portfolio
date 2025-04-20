@@ -8,7 +8,7 @@ function Skills() {
       className="w-full h-fit px-[40px] py-10 max-xs:px-[20px] relative bg-white"
       id="skills"
     >
-      {/* 使用言語 • 技術*/}
+      {/* 使用技術*/}
       <div className="max-w-7xl mx-auto">
         {/* セクションタイトル */}
         <div className="inline-block">
@@ -16,7 +16,7 @@ function Skills() {
             <span>
               <AiFillBulb className="w-4 h-4" />
             </span>
-            使用言語 • 技術
+            使用技術
           </p>
         </div>
 

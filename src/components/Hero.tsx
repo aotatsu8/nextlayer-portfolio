@@ -12,7 +12,7 @@ function Hero() {
           <div className="text-4xl lg:text-6xl">
             <h1 className="font-medium">Leave system</h1>
             <span className="font-bold text-cadetblue">Development</span>
-            <h2>to ORIGIN.Doc</h2>
+            <h2>to NextLayer</h2>
             <p className="mt-5 text-xl">
               フロントエンドから簡易的なバックエンドまで、一貫して対応可能です。 ・React /
               Next.jsによるSPA / SSR開発 ・TypeScriptでの堅牢なUIコンポーネント設計

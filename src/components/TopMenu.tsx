@@ -16,7 +16,7 @@ function TopMenu() {
         {/* 上 */}
         <div className="flex justify-between items-center w-full md:hidden">
           <Link href={'/'}>
-            <h1 className="font-bold text-3xl text-cadetblue">ORIGIN.Doc</h1>
+            <h1 className="font-bold text-3xl text-cadetblue">NextLayer</h1>
           </Link>
           {/* トグル */}
           <div className="text-2xl z-50" onClick={openMobileMenu}>
@@ -28,7 +28,7 @@ function TopMenu() {
         <div className="flex justify-between w-full items-center max-xs:flex-col max-xs:items-start max-xs:gap-2">
           <div className="flex flex-row gap-2 items-center text-lg font-bold">
             <MdEmail />
-            <span className="text-darkblue text-xl pb-1">origindoc@gmail.com</span>
+            <span className="text-darkblue text-xl pb-1">nextlayer@gmail.com</span>
           </div>
           <button className="bg-darkblue text-white px-4 py-1 rounded-md hover:bg-darkblue/75">
             資料ダウンロード

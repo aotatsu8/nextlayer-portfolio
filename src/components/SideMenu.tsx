@@ -54,8 +54,8 @@ function SideMenu() {
         <div className="flex w-full flex-1 flex-col gap-10 justify-between items-center">
           {/* 上 */}
           <div className="flex flex-col justify-center items-center  gap-2">
-            <Image src={'/assets/logo.png'} width={100} height={100} alt={'ORIGIN.Doc Image'} />
-            <p className="font-bold text-darkblue">ORIGIN.Doc</p>
+            <Image src={'/assets/logo.svg'} width={200} height={200} alt={'NextLayer Image'} />
+            {/* <p className="font-bold text-darkblue">NextLayer</p> */}
           </div>
           {/* 中 サイドメニュー*/}
           <div>
@@ -97,7 +97,7 @@ function SideMenu() {
               >
                 <FaDev />
               </a>
-              <p className="max-lg:hidden">© 2025 ORIGIN.Doc</p>
+              <p className="max-lg:hidden">© 2025 NextLayer</p>
             </div>
           </div>
         </div>

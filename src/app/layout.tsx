@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { M_PLUS_1p } from "next/font/google";
-import "../styles/globals.css";
-import SideMenu from "@/components/SideMenu";
-import TopMenu from "@/components/TopMenu";
+import type { Metadata } from 'next';
+import { M_PLUS_1p } from 'next/font/google';
+import '../styles/globals.css';
+import SideMenu from '@/components/SideMenu';
+import TopMenu from '@/components/TopMenu';
 
 const m_PLUS_1p = M_PLUS_1p({
-  subsets: ["latin"],
+  subsets: ['latin'],
   // フォントの設定regular　midium bold　参考　→ https://fonts.google.com/?lang=ja_Jpan
-  weight: ["400", "500", "700"],
+  weight: ['400', '500', '700'],
 });
 
 export const metadata: Metadata = {
-  title: "ORIGIN.Doc",
-  description: "ORIGIN.DocのPORTFOLIO",
+  title: 'NextLayer',
+  description: 'NextLayerのPORTFOLIO',
 };
 
 export default function RootLayout({

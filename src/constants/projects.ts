@@ -12,19 +12,19 @@ export const projects: Project[] = [
   {
     name: 'フリーランスホームページ',
     githubUrl: '',
-    image: '../../assets/projects/1.png',
+    image: '/assets/projects/1.png',
     category: ['react', 'aws'],
   },
   {
     name: '企業ホームページ',
     githubUrl: '',
-    image: '../../assets/projects/2.png',
+    image: '/assets/projects/2.png',
     category: ['react'],
   },
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['aws'],
     projectUrl: '',
     deployed: true,
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -64,7 +64,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -72,7 +72,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -80,7 +80,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -88,7 +88,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   {
     name: '学生向けホームページ',
     githubUrl: '',
-    image: '../../assets/projects/3.png',
+    image: '/assets/projects/3.png',
     category: ['wordpress'],
     projectUrl: '',
     deployed: true,

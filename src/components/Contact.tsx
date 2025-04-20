@@ -57,7 +57,7 @@ function Contact() {
               内容を確認し次第、可能な限り早くご返信させていただきます。
             </p>
             <p className="mt-12">連絡先はこちら</p>
-            <h4 className="text-lg font-medium text-darkblue">origindoc@gmail.com</h4>
+            <h4 className="text-lg font-medium text-darkblue">nextlayer@gmail.com</h4>
             {/* sns */}
             <div className="mt-12">
               <div className="flex flex-col gap-2">

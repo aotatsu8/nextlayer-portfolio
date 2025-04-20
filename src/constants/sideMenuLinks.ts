@@ -17,7 +17,7 @@ export const sideMenuLinks: SideMenuLink[] = [
   },
   {
     route: '#skills',
-    label: '使用言語 • 技術',
+    label: '使用技術',
     sectionId: 'skills',
   },
   {
