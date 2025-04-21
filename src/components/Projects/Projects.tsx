@@ -1,16 +1,20 @@
 'use client';
 import React, { useState } from 'react';
 import { AiFillBulb } from 'react-icons/ai';
-import ProjectCard from './ProjectCard';
-import ProjectFilter from './ProjectFilter';
+import ProjectCard from './_ProjectCard';
+import ProjectFilter from './_ProjectFilter';
 import { Project } from '@/constants/projects';
 import { AnimatePresence } from 'framer-motion';
 
 function Projects() {
-  // フィルタ
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  /**
+   * NOTE: filtered,visivleProjectsをクエリパラメータで管理するとuseStateが不要になる
+   * useStateが不要になればSC（Server Component）としてこのコンポーネントは管理できる
+   * クエリパラメータ管理はnuqs(https://nuqs.47ng.com/docs/basic-usage)がおすすめ
+   */
   const [filtered, setFiltered] = useState<Project[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<number>(9);
+
   const loadMoreProjects = () => {
     setVisibleProjects((preVisibleProjects) => preVisibleProjects + 6);
   };
@@ -31,11 +35,7 @@ function Projects() {
           </p>
         </div>
         {/* フィルター */}
-        <ProjectFilter
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          setFiltered={setFiltered}
-        />
+        <ProjectFilter setFiltered={setFiltered} />
         {/* カード */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence>
