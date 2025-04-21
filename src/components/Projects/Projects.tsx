@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { AiFillBulb } from 'react-icons/ai';
-import ProjectCard from './ProjectCard';
-import ProjectFilter from './ProjectFilter';
+import ProjectCard from './_ProjectCard';
+import ProjectFilter from './_ProjectFilter';
 import { Project } from '@/constants/projects';
 import { AnimatePresence } from 'framer-motion';
 
