@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useRef, useState } from 'react';
 import {
   AiFillBulb,
@@ -8,8 +9,14 @@ import {
   AiFillYoutube,
 } from 'react-icons/ai';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
 function Contact() {
+  /**
+   * TODO: フォームライブラリの使用を検討
+   * フォームの値管理 -> React Hook Form or Conform(https://conform.guide) など
+   * フォームのバリデーション -> Zod
+   */
   const form = useRef<HTMLFormElement>(null);
 
   // 各入力フィールドの状態を管理
@@ -83,18 +90,18 @@ function Contact() {
               <div className="flex flex-col gap-2">
                 <h5>SNS</h5>
                 <div className="flex gap-5">
-                  <a href="" className="text-3xl text-darkblue">
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillInstagram />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillTwitterSquare />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillFacebook />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillYoutube />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
