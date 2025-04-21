@@ -1,13 +1,13 @@
 import { projects, Project } from '@/constants/projects';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 type ProjectFilterProps = {
-  activeCategory: string;
-  setActiveCategory: (category: string) => void;
   setFiltered: (filtered: Project[]) => void;
 };
 
-function ProjectFilter({ activeCategory, setActiveCategory, setFiltered }: ProjectFilterProps) {
+function ProjectFilter({ setFiltered }: ProjectFilterProps) {
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+
   useEffect(() => {
     if (activeCategory === 'all') {
       setFiltered(projects);

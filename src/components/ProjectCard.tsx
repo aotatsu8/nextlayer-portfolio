@@ -9,6 +9,7 @@ type ProjectCardProps = {
   githubUrl: string;
   image: string;
   projectUrl?: string;
+  // NOTE:projectUrlの有無で判定できるのでは？
   deployed?: boolean;
 };
 
