@@ -1,13 +1,14 @@
 import { projects, Project } from '@/constants/projects';
-import React, { useEffect } from 'react';
+import { useQueryState } from 'nuqs';
+import React, { useEffect, useState } from 'react';
 
 type ProjectFilterProps = {
-  activeCategory: string;
-  setActiveCategory: (category: string) => void;
   setFiltered: (filtered: Project[]) => void;
 };
 
-function ProjectFilter({ activeCategory, setActiveCategory, setFiltered }: ProjectFilterProps) {
+export function ProjectFilter({ setFiltered }: ProjectFilterProps) {
+  // const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeCategory, setActiveCategory] = useQueryState('all');
   useEffect(() => {
     if (activeCategory === 'all') {
       setFiltered(projects);
@@ -49,5 +50,3 @@ function ProjectFilter({ activeCategory, setActiveCategory, setFiltered }: Proje
     </div>
   );
 }
-
-export default ProjectFilter;

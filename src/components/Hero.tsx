@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import '../styles/animations.css';
 
-function Hero() {
+export function Hero() {
   return (
     <section className="w-full lg:h-screen h-fit bg-whitesmoke relative px-[40px] py-10 max-xs:px-[20px]">
       <div className="max-w-7xl flex items-center justify-between h-full mx-auto max-md:flex-col max-md:gap-10 max-md:text-center">
@@ -60,5 +60,3 @@ function Hero() {
     </section>
   );
 }
-
-export default Hero;

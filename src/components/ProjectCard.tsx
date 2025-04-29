@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // プロジェクトの型定義
 type ProjectCardProps = {
@@ -12,7 +13,7 @@ type ProjectCardProps = {
   deployed?: boolean;
 };
 
-function ProjectCard({ name, githubUrl, image, projectUrl, deployed }: ProjectCardProps) {
+export function ProjectCard({ name, githubUrl, image, projectUrl, deployed }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,27 +25,25 @@ function ProjectCard({ name, githubUrl, image, projectUrl, deployed }: ProjectCa
       <Image src={image} alt={`${name} Image`} width={300} height={200} className="rounded-lg" />
       <h3 className="ml-2">{name}</h3>
       <div className="flex gap-2 items-center w-full m-1">
-        <a
+        <Link
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="text-darkblue p-1 rounded-full text-lg"
         >
           <AiFillGithub />
-        </a>
-        {deployed && (
-          <a
+        </Link>
+        {deployed && projectUrl && (
+          <Link
             href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-darkblue p-1 rounded-full text-2xl"
           >
             <AiFillEye />
-          </a>
+          </Link>
         )}
       </div>
     </motion.div>
   );
 }
-
-export default ProjectCard;

@@ -1,14 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import { AiFillBulb } from 'react-icons/ai';
-import ProjectCard from './ProjectCard';
-import ProjectFilter from './ProjectFilter';
 import { Project } from '@/constants/projects';
 import { AnimatePresence } from 'framer-motion';
+import { ProjectFilter } from './ProjectFilter';
+import { ProjectCard } from './ProjectCard';
 
-function Projects() {
+export function Projects() {
   // フィルタ
-  const [activeCategory, setActiveCategory] = useState<string>('all');
   const [filtered, setFiltered] = useState<Project[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<number>(9);
   const loadMoreProjects = () => {
@@ -31,11 +30,7 @@ function Projects() {
           </p>
         </div>
         {/* フィルター */}
-        <ProjectFilter
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          setFiltered={setFiltered}
-        />
+        <ProjectFilter setFiltered={setFiltered} />
         {/* カード */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence>
@@ -66,5 +61,3 @@ function Projects() {
     </section>
   );
 }
-
-export default Projects;

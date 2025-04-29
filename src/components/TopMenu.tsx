@@ -7,7 +7,7 @@ import { RiMenu3Fill } from 'react-icons/ri';
 import { MdEmail } from 'react-icons/md';
 import { useMenuStore } from '@/store/useMenuStore';
 
-function TopMenu() {
+export function TopMenu() {
   const { isOpen, openMobileMenu } = useMenuStore();
 
   return (
@@ -38,5 +38,3 @@ function TopMenu() {
     </section>
   );
 }
-
-export default TopMenu;

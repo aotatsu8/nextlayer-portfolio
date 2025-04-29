@@ -14,6 +14,8 @@ export const projects: Project[] = [
     githubUrl: '',
     image: '/assets/projects/1.png',
     category: ['react', 'aws'],
+    projectUrl: 'https://nextlayer-portfolio.vercel.app/',
+    deployed: true,
   },
   {
     name: '企業ホームページ',

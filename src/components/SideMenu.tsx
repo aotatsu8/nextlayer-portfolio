@@ -2,11 +2,12 @@
 import { SideMenuLink, sideMenuLinks } from '@/constants/sideMenuLinks';
 import { useMenuStore } from '@/store/useMenuStore';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaDev } from 'react-icons/fa';
 
-function SideMenu() {
+export function SideMenu() {
   const { isOpen, closeMobileMenu } = useMenuStore();
   const [activeLink, setActiveLink] = useState<SideMenuLink>(sideMenuLinks[0]);
   const handleLinkClick = (link: SideMenuLink) => {
@@ -61,41 +62,41 @@ function SideMenu() {
           {sideMenuLinks.map((link: SideMenuLink) => {
             const isActive = activeLink === link;
             return (
-              <a
+              <Link
                 key={link.label}
                 href={link.route}
                 className={`relative flex justify-center rounded-lg p-3 ${isActive ? 'bg-cadetblue text-white' : ''}`}
                 onClick={() => handleLinkClick(link)}
               >
                 <p>{link.label}</p>
-              </a>
+              </Link>
             );
           })}
         </div>
         {/* 下 */}
         <div className="flex flex-col items-center justify-center text-center">
           <div className="flex flex-col lg:flex-row items-center gap-4 mb-3">
-            <a
+            <Link
               href=""
               target="_blank"
               className="bg-darkblue p-2 rounded-full cursor-pointer hover:bg-darkblue/75 text-white"
             >
               <AiFillGithub />
-            </a>
-            <a
+            </Link>
+            <Link
               href=""
               target="_blank"
               className="bg-darkblue p-2 rounded-full cursor-pointer hover:bg-darkblue/75 text-white"
             >
               <AiFillLinkedin />
-            </a>
-            <a
+            </Link>
+            <Link
               href=""
               target="_blank"
               className="bg-darkblue p-2 rounded-full cursor-pointer hover:bg-darkblue/75 text-white"
             >
               <FaDev />
-            </a>
+            </Link>
           </div>
           <p className="max-lg:hidden">© 2025 NextLayer</p>
         </div>
@@ -103,5 +104,3 @@ function SideMenu() {
     </section>
   );
 }
-
-export default SideMenu;

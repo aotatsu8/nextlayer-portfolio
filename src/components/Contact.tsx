@@ -8,8 +8,9 @@ import {
   AiFillYoutube,
 } from 'react-icons/ai';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
-function Contact() {
+export function Contact() {
   const form = useRef<HTMLFormElement>(null);
 
   // 各入力フィールドの状態を管理
@@ -83,18 +84,18 @@ function Contact() {
               <div className="flex flex-col gap-2">
                 <h5>SNS</h5>
                 <div className="flex gap-5">
-                  <a href="" className="text-3xl text-darkblue">
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillInstagram />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillTwitterSquare />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillFacebook />
-                  </a>
-                  <a href="" className="text-3xl text-darkblue">
+                  </Link>
+                  <Link href="" className="text-3xl text-darkblue">
                     <AiFillYoutube />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -157,5 +158,3 @@ function Contact() {
     </section>
   );
 }
-
-export default Contact;
