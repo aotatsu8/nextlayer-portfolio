@@ -24,15 +24,13 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${m_PLUS_1p.className}`}>
-        <NuqsAdapter>
-          <main className="flex flex-row">
-            <SideMenu />
-            <section className="pl-[300px] max-lg:pl-[146px] max-md:pl-0 w-full min-h-screen overflow-hidden">
-              <TopMenu />
-              {children}
-            </section>
-          </main>
-        </NuqsAdapter>
+        <main className="flex flex-row">
+          <SideMenu />
+          <section className="pl-[300px] max-lg:pl-[146px] max-md:pl-0 w-full min-h-screen overflow-hidden">
+            <TopMenu />
+            {children}
+          </section>
+        </main>
       </body>
     </html>
   );

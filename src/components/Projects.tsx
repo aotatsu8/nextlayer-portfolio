@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { AiFillBulb } from 'react-icons/ai';
 import { Project } from '@/constants/projects';
 import { AnimatePresence } from 'framer-motion';
 import { ProjectFilter } from './ProjectFilter';
 import { ProjectCard } from './ProjectCard';
+import { NuqsAdapter } from 'nuqs/adapters/next';
 
 export function Projects() {
   // フィルタ
@@ -30,7 +31,11 @@ export function Projects() {
           </p>
         </div>
         {/* フィルター */}
-        <ProjectFilter setFiltered={setFiltered} />
+        <Suspense>
+          <NuqsAdapter>
+            <ProjectFilter setFiltered={setFiltered} />
+          </NuqsAdapter>
+        </Suspense>
         {/* カード */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence>

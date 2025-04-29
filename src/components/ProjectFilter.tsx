@@ -7,8 +7,13 @@ type ProjectFilterProps = {
 };
 
 export function ProjectFilter({ setFiltered }: ProjectFilterProps) {
-  // const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [activeCategory, setActiveCategory] = useQueryState('all');
+  const [activeCategory, setActiveCategory] = useQueryState<string>('all', {
+    parse: (v) => v,
+    serialize: (v) => v,
+    defaultValue: 'all',
+    // URLだけ変えてリロードさせたくないならreplace
+    history: 'replace',
+  });
   useEffect(() => {
     if (activeCategory === 'all') {
       setFiltered(projects);
