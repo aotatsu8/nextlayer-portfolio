@@ -10,6 +10,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: '旅する限界エンジニアのBLOG',
+    githubUrl: '',
+    image: '/assets/projects/14.png',
+    category: ['react'],
+    projectUrl: 'https://myblog-ashy-pi.vercel.app/',
+    deployed: true,
+  },
+  {
+    name: 'お抱えソムリエサービス Cave Privée',
+    githubUrl: '',
+    image: '/assets/projects/13.png',
+    category: ['react'],
+    projectUrl: 'https://cave-privee-one.vercel.app/',
+    deployed: true,
+  },
+  {
     name: 'フリーランスホームページ',
     githubUrl: '',
     image: '/assets/projects/1.png',

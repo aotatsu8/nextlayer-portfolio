@@ -22,7 +22,13 @@ export function ProjectCard({ name, githubUrl, image, projectUrl, deployed }: Pr
       transition={{ duration: 0.3 }}
       className="mb-4 p-4 border border-gray-200 rounded-lg bg-whitesmoke shadow-md"
     >
-      <Image src={image} alt={`${name} Image`} width={300} height={200} className="rounded-lg" />
+      <Image
+        src={image}
+        alt={`${name} Image`}
+        width={300}
+        height={200}
+        className="rounded-lg block mx-auto"
+      />
       <h3 className="ml-2">{name}</h3>
       <div className="flex gap-2 items-center w-full m-1">
         <Link
