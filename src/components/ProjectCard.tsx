@@ -29,8 +29,8 @@ export function ProjectCard({ name, githubUrl, image, projectUrl, deployed }: Pr
         height={200}
         className="rounded-lg block mx-auto"
       />
-      <h3 className="ml-2">{name}</h3>
-      <div className="flex gap-2 items-center w-full m-1">
+      <h3 className="text-center mt-2">{name}</h3>
+      <div className="flex gap-2 items-center justify-center w-full m-1">
         <Link
           href={githubUrl}
           target="_blank"
