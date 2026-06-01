@@ -3,16 +3,29 @@ import { SideMenuLink, sideMenuLinks } from '@/constants/sideMenuLinks';
 import { useMenuStore } from '@/store/useMenuStore';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaDev } from 'react-icons/fa';
 
 export function SideMenu() {
   const { isOpen, closeMobileMenu } = useMenuStore();
   const [activeLink, setActiveLink] = useState<SideMenuLink>(sideMenuLinks[0]);
+  // クリックによるスクロール中はscroll監視を一時ロックし、ハイライトのチラつきを防ぐ
+  const lockRef = useRef(false);
+  const targetRef = useRef<string | null>(null);
+  const lockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const handleLinkClick = (link: SideMenuLink) => {
     closeMobileMenu();
     setActiveLink(link);
+    lockRef.current = true;
+    targetRef.current = link.sectionId;
+    if (lockTimerRef.current) clearTimeout(lockTimerRef.current);
+    // 目的セクションに到達できなかった場合のフォールバック解除
+    lockTimerRef.current = setTimeout(() => {
+      lockRef.current = false;
+      targetRef.current = null;
+    }, 1200);
   };
 
   const handleScroll = () => {
@@ -21,21 +34,32 @@ export function SideMenu() {
     );
     const scrollPosition = window.scrollY;
 
+    let current: SideMenuLink | null = null;
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
-      if (section) {
-        if (section.offsetTop <= scrollPosition + 150) {
-          setActiveLink(sideMenuLinks[i]);
-          break;
-        }
+      if (section && section.offsetTop <= scrollPosition + 150) {
+        current = sideMenuLinks[i];
+        break;
       }
     }
+
+    // ロック中は中間セクションでハイライトを書き換えず、目的地到達で解除
+    if (lockRef.current) {
+      if (current && current.sectionId === targetRef.current) {
+        lockRef.current = false;
+        targetRef.current = null;
+      }
+      return;
+    }
+
+    if (current) setActiveLink(current);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (lockTimerRef.current) clearTimeout(lockTimerRef.current);
     };
   }, []);
 
