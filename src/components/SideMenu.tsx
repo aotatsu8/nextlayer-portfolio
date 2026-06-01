@@ -9,31 +9,39 @@ import { FaDev } from 'react-icons/fa';
 
 export function SideMenu() {
   const { isOpen, closeMobileMenu } = useMenuStore();
+  // 現在ハイライト中のメニュー項目（スクロール位置に追従する＝スクロールスパイ）
   const [activeLink, setActiveLink] = useState<SideMenuLink>(sideMenuLinks[0]);
-  // クリックによるスクロール中はscroll監視を一時ロックし、ハイライトのチラつきを防ぐ
+
+  // --- クリック時のハイライトのチラつき防止用 ---
+  // クリックでスクロール中は handleScroll の更新をロックする（中間セクションで点滅させない）
   const lockRef = useRef(false);
+  // クリックで向かっている目的セクションのID（ここに到達したらロック解除）
   const targetRef = useRef<string | null>(null);
+  // ロックの保険となるタイマー（目的地に到達できなかった場合に強制解除）
   const lockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // メニュー項目クリック時：ハイライトを即時にクリック先へ固定し、到達までロックする
   const handleLinkClick = (link: SideMenuLink) => {
-    closeMobileMenu();
-    setActiveLink(link);
+    closeMobileMenu(); // モバイルのドロワーを閉じる
+    setActiveLink(link); // ハイライトをクリック項目に即反映
     lockRef.current = true;
     targetRef.current = link.sectionId;
     if (lockTimerRef.current) clearTimeout(lockTimerRef.current);
-    // 目的セクションに到達できなかった場合のフォールバック解除
+    // 最下部セクション等でscrollが目的地に届かない場合の保険として1.2秒で解除
     lockTimerRef.current = setTimeout(() => {
       lockRef.current = false;
       targetRef.current = null;
     }, 1200);
   };
 
+  // スクロールに応じて「今どのセクションを見ているか」を判定しハイライトを更新する
   const handleScroll = () => {
     const sections = sideMenuLinks.map((link: SideMenuLink) =>
       document.getElementById(link.sectionId)
     );
     const scrollPosition = window.scrollY;
 
+    // 上端から150px下を基準線とし、それを超えている最も下のセクションを「現在地」とする
     let current: SideMenuLink | null = null;
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
@@ -43,7 +51,8 @@ export function SideMenu() {
       }
     }
 
-    // ロック中は中間セクションでハイライトを書き換えず、目的地到達で解除
+    // ロック中（クリックでスクロール移動中）は中間セクションで書き換えず、
+    // 目的セクションに到達したらロックを解除して通常追従に戻す
     if (lockRef.current) {
       if (current && current.sectionId === targetRef.current) {
         lockRef.current = false;
@@ -55,6 +64,7 @@ export function SideMenu() {
     if (current) setActiveLink(current);
   };
 
+  // スクロール監視の登録／解除（アンマウント時に保険タイマーも片付ける）
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {

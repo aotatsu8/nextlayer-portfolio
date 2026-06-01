@@ -18,7 +18,7 @@ export function About() {
         <div className="mt-7">
           <p className="mt-6 text-gray-600 text-lg md:text-xl leading-9">
             はじめまして！フリーランスのWebエンジニア、青木達哉です。
-            これまで4年以上、フロントエンドを中心にReactやNext.jsを使った開発に携わってきました。
+            これまで6年以上、フロントエンドを中心にReactやNext.jsを使った開発に携わってきました。
             使いやすさとデザインのバランスを意識したUI実装を得意としています。 最近はExpress ×
             TypeScriptでのAPI開発にも取り組み、
             ちょっとしたバックエンド対応まで含めたフルスタックな開発にも対応できるようになってきました。

@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 
 export function Projects() {
+  // 一度に表示する件数。初期は9件、「もっと見る」で6件ずつ増やす
   const [visibleProjects, setVisibleProjects] = useState<number>(9);
   const loadMoreProjects = () => {
     setVisibleProjects((preVisibleProjects) => preVisibleProjects + 6);
@@ -26,7 +27,7 @@ export function Projects() {
             開発実績
           </p>
         </div>
-        {/* カード */}
+        {/* カード（visibleProjects 件だけ表示。AnimatePresence で増減時にフェード） */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           <AnimatePresence>
             {projects.slice(0, visibleProjects).map((project, index) => (
@@ -41,7 +42,7 @@ export function Projects() {
             ))}
           </AnimatePresence>
         </div>
-        {/* もっと見る */}
+        {/* もっと見る：まだ未表示の実績が残っている時だけボタンを出す */}
         {visibleProjects < projects.length && (
           <div className="text-center mt-4">
             <button
