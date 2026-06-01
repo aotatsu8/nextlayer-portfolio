@@ -33,19 +33,13 @@ export function About() {
             <ul className="flex justify-between gap-10 flex-col md:flex-row">
               <li className="w-full shadow-sm">
                 <div className="w-full text-center py-[30px] md:py-[60px] rounded-md bg-whitesmoke">
-                  <h3 className="text-4xl mb-1 font-bold text-darkblue">900+</h3>
-                  <span>YOUTUBE</span>
-                </div>
-              </li>
-              <li className="w-full shadow-sm">
-                <div className="w-full text-center py-[30px] md:py-[60px] rounded-md bg-whitesmoke">
-                  <h3 className="text-4xl mb-1 font-bold text-darkblue">4</h3>
+                  <h3 className="text-4xl mb-1 font-bold text-darkblue">5</h3>
                   <span>PROJECT</span>
                 </div>
               </li>
               <li className="w-full shadow-sm">
                 <div className="w-full text-center py-[30px] md:py-[60px] rounded-md bg-whitesmoke">
-                  <h3 className="text-4xl mb-1 font-bold text-darkblue">4+</h3>
+                  <h3 className="text-4xl mb-1 font-bold text-darkblue">6+</h3>
                   <span>YEARS</span>
                 </div>
               </li>

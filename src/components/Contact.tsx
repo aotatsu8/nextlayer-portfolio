@@ -5,7 +5,6 @@ import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillTwitterSquare,
-  AiFillYoutube,
 } from 'react-icons/ai';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
@@ -84,17 +83,29 @@ export function Contact() {
               <div className="flex flex-col gap-2">
                 <h5>SNS</h5>
                 <div className="flex gap-5">
-                  <Link href="" className="text-3xl text-darkblue">
+                  <Link
+                    href="https://www.instagram.com/ta__eight"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-3xl text-darkblue"
+                  >
                     <AiFillInstagram />
                   </Link>
-                  <Link href="" className="text-3xl text-darkblue">
+                  <Link
+                    href="https://x.com/TatsuyaAok8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-3xl text-darkblue"
+                  >
                     <AiFillTwitterSquare />
                   </Link>
-                  <Link href="" className="text-3xl text-darkblue">
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61590785090840"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-3xl text-darkblue"
+                  >
                     <AiFillFacebook />
-                  </Link>
-                  <Link href="" className="text-3xl text-darkblue">
-                    <AiFillYoutube />
                   </Link>
                 </div>
               </div>

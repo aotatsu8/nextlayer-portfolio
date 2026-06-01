@@ -22,18 +22,6 @@ export function Hero() {
               お気軽にお問い合わせください！
             </p>
           </div>
-          <div className="flex gap-4 max-md:justify-center">
-            <Link href={'#projects'}>
-              <button className="bg-darkblue text-white px-2 rounded-md py-1 hover:bg-darkblue/75 cursor-pointer lg:px-4">
-                開発実績
-              </button>
-            </Link>
-            <Link href={'#contact'}>
-              <button className="bg-darkblue text-white px-2 rounded-md py-1 hover:bg-darkblue/75 cursor-pointerlg:px-4">
-                コンタクト
-              </button>
-            </Link>
-          </div>
         </div>
         {/* 右 */}
         <Image

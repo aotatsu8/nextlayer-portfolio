@@ -30,9 +30,6 @@ export function TopMenu() {
             <MdEmail />
             <span className="text-darkblue text-xl pb-1">nextlayer@gmail.com</span>
           </div>
-          <button className="bg-darkblue text-white px-4 py-1 rounded-md hover:bg-darkblue/75">
-            資料ダウンロード
-          </button>
         </div>
       </div>
     </section>
