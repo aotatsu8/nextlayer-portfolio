@@ -3,7 +3,6 @@ import { M_PLUS_1p } from 'next/font/google';
 import '../styles/globals.css';
 import { SideMenu } from '@/components/SideMenu';
 import { TopMenu } from '@/components/TopMenu';
-import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const m_PLUS_1p = M_PLUS_1p({
   subsets: ['latin'],

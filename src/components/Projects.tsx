@@ -1,15 +1,11 @@
 'use client';
-import React, { Suspense, useState } from 'react';
+import React, { useState } from 'react';
 import { AiFillBulb } from 'react-icons/ai';
-import { Project } from '@/constants/projects';
+import { projects } from '@/constants/projects';
 import { AnimatePresence } from 'framer-motion';
-import { ProjectFilter } from './ProjectFilter';
 import { ProjectCard } from './ProjectCard';
-import { NuqsAdapter } from 'nuqs/adapters/next';
 
 export function Projects() {
-  // フィルタ
-  const [filtered, setFiltered] = useState<Project[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<number>(9);
   const loadMoreProjects = () => {
     setVisibleProjects((preVisibleProjects) => preVisibleProjects + 6);
@@ -30,16 +26,10 @@ export function Projects() {
             開発実績
           </p>
         </div>
-        {/* フィルター */}
-        <Suspense>
-          <NuqsAdapter>
-            <ProjectFilter setFiltered={setFiltered} />
-          </NuqsAdapter>
-        </Suspense>
         {/* カード */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           <AnimatePresence>
-            {filtered.slice(0, visibleProjects).map((project, index) => (
+            {projects.slice(0, visibleProjects).map((project, index) => (
               <ProjectCard
                 key={index}
                 name={project.name}
@@ -52,7 +42,7 @@ export function Projects() {
           </AnimatePresence>
         </div>
         {/* もっと見る */}
-        {visibleProjects < filtered.length && (
+        {visibleProjects < projects.length && (
           <div className="text-center mt-4">
             <button
               className="bg-darkblue text-white px-2 py-1 rounded-md hover:bg-darkblue/75"
