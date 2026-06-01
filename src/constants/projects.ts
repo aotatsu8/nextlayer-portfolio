@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     name: 'フリーランスホームページ',
     githubUrl: '',
-    image: '/assets/projects/15.png',
+    image: '/assets/projects/16.png',
     category: ['react', 'aws'],
     projectUrl: 'https://nextlayer-portfolio.vercel.app/',
     deployed: true,
