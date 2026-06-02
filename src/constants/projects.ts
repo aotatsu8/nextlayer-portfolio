@@ -14,7 +14,7 @@ export const projects: Project[] = [
     githubUrl: '',
     image: '/assets/projects/14.png',
     category: ['react'],
-    projectUrl: 'https://myblog-ashy-pi.vercel.app/',
+    projectUrl: 'https://blog.aotatsu7.workers.dev/',
     deployed: true,
   },
   {
