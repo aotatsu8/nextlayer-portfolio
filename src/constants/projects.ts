@@ -11,7 +11,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: '旅する限界エンジニアのBLOG',
-    githubUrl: '',
+    githubUrl: 'https://github.com/aotatsu8/blog',
     image: '/assets/projects/14.png',
     category: ['react'],
     projectUrl: 'https://blog.aotatsu7.workers.dev/',
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   },
   {
     name: 'お抱えソムリエサービス Cave Privée',
-    githubUrl: '',
+    githubUrl: 'https://github.com/aotatsu8/cave-privee',
     image: '/assets/projects/13.png',
     category: ['react'],
     projectUrl: 'https://cave-privee-one.vercel.app/',
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   },
   {
     name: 'フリーランスホームページ',
-    githubUrl: '',
+    githubUrl: 'https://github.com/aotatsu8/nextlayer-portfolio',
     image: '/assets/projects/16.png',
     category: ['react', 'aws'],
     projectUrl: 'https://nextlayer-portfolio.vercel.app/',
