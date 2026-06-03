@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { RiMenu3Fill } from 'react-icons/ri';
-import { MdEmail } from 'react-icons/md';
 import { useMenuStore } from '@/store/useMenuStore';
 
 export function TopMenu() {
@@ -21,14 +20,6 @@ export function TopMenu() {
           {/* トグル */}
           <div className="text-2xl z-50" onClick={openMobileMenu}>
             {isOpen ? <AiOutlineClose /> : <RiMenu3Fill />}
-          </div>
-        </div>
-
-        {/* 下 */}
-        <div className="flex justify-between w-full items-center max-xs:flex-col max-xs:items-start max-xs:gap-2">
-          <div className="flex flex-row gap-2 items-center text-lg font-bold">
-            <MdEmail />
-            <span className="text-darkblue text-xl pb-1">nextlayer@gmail.com</span>
           </div>
         </div>
       </div>

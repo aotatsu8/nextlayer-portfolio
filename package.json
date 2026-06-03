@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.7.3",
     "next": "15.5.19",
     "nuqs": "^2.4.3",
